@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:orientation="vertical"
+    android:paddingLeft="20dp"
+    android:paddingTop="50dp"
+    >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:gravity="center"
+        >
+
+        <TextView
+            android:id="@+id/tv_money"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:textSize="20sp"
+            android:gravity="bottom|right"
+            android:paddingRight="10dp"
+            android:text="0"
+
+            android:textColor="@android:color/black"
+            />
+
+        <TextView
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:gravity="left|bottom"
+            android:text="万元"
+            android:textSize="10sp"
+            android:textColor="@android:color/black"
+            />
+
+    </LinearLayout>
+
+
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="left|bottom"
+            android:text="装修风格"
+            android:textSize="15sp"
+            />
+
+        <RadioGroup
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            >
+            <RadioButton
+                android:id="@+id/radio_haohua"
+                android:layout_width="wrap_content"
+                android:layout_height="20dp"
+                android:layout_marginLeft="8dp"
+
+                android:textSize="12sp"
+                android:text="豪华"
+                android:paddingLeft="5dp"
+                android:checked="true"
+
+                />
+            <RadioButton
+                android:id="@+id/radio_zhongdeng"
+                android:layout_width="wrap_content"
+                android:layout_height="20dp"
+                android:layout_marginLeft="20dp"
+
+                android:textSize="12sp"
+                android:text="中等"
+                android:paddingLeft="5dp"
+                />
+
+            <RadioButton
+                android:id="@+id/radio_putong"
+                android:layout_width="wrap_content"
+                android:layout_height="20dp"
+                android:layout_marginLeft="20dp"
+
+                android:textSize="12sp"
+                android:text="普通"
+                android:paddingLeft="5dp"
+                />
+
+        </RadioGroup>
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        >
+
+
+        <TextView
+            android:id="@+id/tv_title_select"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="left|bottom"
+            android:text="户型选择"
+            android:textSize="15sp"
+        />
+        <TextView
+            android:id="@+id/tv_root"
+            android:layout_toRightOf="@+id/tv_title_select"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:textColor="@android:color/black"
+            android:textSize="15sp"
+            android:text="0室  0厅  0卫  0厨  0阳台"
+            android:layout_toLeftOf="@+id/iv_root"
+
+            />
+        <ImageView
+            android:id="@+id/iv_root"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:layout_marginRight="70dp"
+            android:layout_alignParentRight="true"
+            android:src="@drawable/up"
+            android:scaleType="fitCenter"
+            />
+
+        <Button
+            android:layout_marginTop="70dp"
+            android:id="@+id/bt_jisuan"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:text="开始计算"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="10dp"
+            />
+
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/ry_room"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="70dp"
+            android:layout_below="@+id/tv_root"
+            android:layout_toRightOf="@+id/tv_title_select"
+            tools:listitem="@layout/item_room"
+            android:visibility="invisible"
+
+            android:background="@color/colorWhite"
+            />
+
+
+
+
+    </RelativeLayout>
+
+</LinearLayout>
