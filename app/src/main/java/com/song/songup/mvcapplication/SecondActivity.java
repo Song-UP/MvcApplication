@@ -10,7 +10,7 @@ public class SecondActivity extends BaseActivity {
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
-        setImmersive();
+//        setImmersive();
         super.onCreate(savedInstanceState);
     }
 
