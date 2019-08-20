@@ -16,8 +16,23 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+    applicationVariants.all { variant ->
+
+        variant.outputs.all {
+            String apkDirPath =  variant.packageApplication.outputDirectory.absolutePath;
+            apkDirPath = apkDirPath.substring(0,apkDirPath.indexOf("outputs\\apk"))+"bakApk/app-${releaseTime()}/${variant.flavorName}"
+            variant.packageApplication.outputDirectory  = new File(apkDirPath)
+
+            outputFileName = "app-${variant.flavorName}-${variant.buildType.name}.apk"
+
+        }
+
+    }
 }
 
+static def releaseTime(){
+    return new Date().format("yyyy-MM-dd-HH-mm-ss",TimeZone.getTimeZone("utc"))
+}
 dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
     implementation 'com.android.support:appcompat-v7:28.0.0'
